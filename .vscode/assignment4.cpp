@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
-void  product_type1() {
+void  product_type1(int c) {
 	cout << "Enter first 7 digits of product code:";
 	int p_code[7];
 	for (int i = 0; i < 7; i++) {
-		cin >> p_code[i];
+		 p_code[i]=c;
 	}
 	cout << endl;
 	int s1 = 0, s2 = 0, s3 = 0;
@@ -118,13 +118,14 @@ void  product_type5() {
 	do {
 		s3 = s3 - 10;
 	} while (s3 > 10);
-	s3 = 10-s3;
+	s3 = 10 - s3;
 	cout << "The check digit is:" << s3 << endl;
 	cout << "The product code is  ";
 	for (int j = 0; j < 17; j++) {
 		cout << p_code[j];
 	}cout << s3;
 }
+
 int main() {
 	cout << "CHECK DIGIT CALCULATOR\n ---------------\n";
 	cout << "1.EAN-8\n";
@@ -133,12 +134,13 @@ int main() {
 	cout << "4.EAN-14\n";
 	cout << "5.SSCC\n";
 	cout << "-------------------\n ";
-	int type;
+	int type,c;
 	
 	cout << "Choose your product type:";
 	cin >> type; cout << endl;
 	if (type == 1) {
-		product_type1();
+		cin >> c;
+		product_type1( c);
 		cout << "\n-----------";
 	}
 	else if (type == 2) {
