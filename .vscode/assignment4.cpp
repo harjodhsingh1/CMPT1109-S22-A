@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
-void  product_type1(int c) {
+void  product_type1() {
 	cout << "Enter first 7 digits of product code:";
 	int p_code[7];
 	for (int i = 0; i < 7; i++) {
-		 p_code[i]=c;
+		cin >> p_code[i];
 	}
 	cout << endl;
 	int s1 = 0, s2 = 0, s3 = 0;
@@ -19,7 +19,11 @@ void  product_type1(int c) {
 		s3 = s3 - 10;
 	} while (s3 > 10);
 	s3 = 10 - s3;
-	cout << "The check digit is:"<<s3<<endl;
+	if (s3 == 10)
+	{
+		s3 == 0;
+	}
+	cout << "The check digit is:" << s3 << endl;
 	cout << "The product code is  ";
 	for (int j = 0; j < 7; j++) {
 		cout << p_code[j];
@@ -36,7 +40,7 @@ void  product_type2() {
 	for (int k = 0; k < 11; k = k + 2) {
 		s1 = s1 + p_code[k];
 	}
-	for (int m = 1; m <11; m = m + 2) {
+	for (int m = 1; m < 11; m = m + 2) {
 		s2 = s2 + p_code[m];
 	}
 	s3 = (s1 * 3) + s2;
@@ -44,6 +48,10 @@ void  product_type2() {
 		s3 = s3 - 10;
 	} while (s3 > 10);
 	s3 = 10 - s3;
+	if (s3 == 10)
+	{
+		s3 == 0;
+	}
 	cout << "The check digit is:" << s3 << endl;
 	cout << "The product code is  ";
 	for (int j = 0; j < 11; j++) {
@@ -64,11 +72,12 @@ void  product_type3() {
 	for (int m = 1; m < 12; m = m + 2) {
 		s2 = s2 + p_code[m];
 	}
-	s3 = (s1 * 3) + s2;
+	s3 = (s2 * 3) +s1;
 	do {
 		s3 = s3 - 10;
 	} while (s3 > 10);
 	s3 = 10 - s3;
+	
 	cout << "The check digit is:" << s3 << endl;
 	cout << "The product code is  ";
 	for (int j = 0; j < 12; j++) {
@@ -94,6 +103,10 @@ void  product_type4() {
 		s3 = s3 - 10;
 	} while (s3 > 10);
 	s3 = 10 - s3;
+	if (s3 == 10)
+	{
+		s3 == 0;
+	}
 	cout << "The check digit is:" << s3 << endl;
 	cout << "The product code is  ";
 	for (int j = 0; j < 13; j++) {
@@ -119,12 +132,17 @@ void  product_type5() {
 		s3 = s3 - 10;
 	} while (s3 > 10);
 	s3 = 10 - s3;
+	if (s3 == 10)
+	{
+		s3 == 0;
+	}
 	cout << "The check digit is:" << s3 << endl;
 	cout << "The product code is  ";
 	for (int j = 0; j < 17; j++) {
-		cout << p_code[j];
-	}cout << s3;
-}
+			cout << p_code[j];
+		}cout << s3;
+	
+	}
 
 int main() {
 	cout << "CHECK DIGIT CALCULATOR\n ---------------\n";
@@ -134,13 +152,12 @@ int main() {
 	cout << "4.EAN-14\n";
 	cout << "5.SSCC\n";
 	cout << "-------------------\n ";
-	int type,c;
-	
+	int type, c;
+
 	cout << "Choose your product type:";
 	cin >> type; cout << endl;
 	if (type == 1) {
-		cin >> c;
-		product_type1( c);
+		product_type1();
 		cout << "\n-----------";
 	}
 	else if (type == 2) {
