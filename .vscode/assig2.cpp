@@ -48,7 +48,7 @@ public:
 int main() {
 
 	rat_num r1,r2,r3;
-	r1.read(r1);
+	r1.read());
 	r2.read();
 	r3.addition(r1, r2);
 	r3.print();
