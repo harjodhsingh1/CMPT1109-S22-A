@@ -1,0 +1,13 @@
+Enter Numerator for Rational Number
+1
+Enter Denominator for Rational Number
+2
+Enter Numerator for Rational Number
+2
+Enter Denominator for Rational Number
+3
+Result is : 7/6
+Result is : -1/6
+Result is : 2/6
+Result is : 3/4
+Rational Numbers less than opertion is true between two numbers
