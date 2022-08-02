@@ -6,13 +6,13 @@ class poly {
 public:
 	int* arr;
 	int* arr1;
-	int a, b, c,d;
+	int a, b, c, d;
 
 public:
 	poly() {
 		arr = new int[3];
 		arr1 = new int[3];
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i <3; i++)
 		{
 			arr[i] = 0;
 			arr1[i] = 0;
@@ -20,6 +20,7 @@ public:
 		d = 0;
 	}
 	poly(int A, int B, int C) {
+
 		a = A;
 		b = B;
 		c = C;
@@ -78,8 +79,9 @@ public:
 			if (i == 0) {
 				cout << arr1[i] << endl;
 			}
+			else if (arr1[i] < 0)
+				cout << arr1[i] << "(x^" << i << ")";
 			else
-
 				cout << arr1[i] << "(x^" << i << ")+";
 		}
 	}
@@ -96,8 +98,8 @@ public:
 						arr1[j] = arr[j];
 					}
 					else
-
-						arr1[j] = arr[j] - x.arr[k];
+							arr1[j] = arr[j] - x.arr[k];
+						
 				}
 			}
 		}
@@ -106,8 +108,9 @@ public:
 			if (i == 0) {
 				cout << arr1[i] << endl;
 			}
+			else if(arr1[i]>0)
+				cout << arr1[i] << "(x^" << i << ")";
 			else
-
 				cout << arr1[i] << "(x^" << i << ")+";
 		}
 	}
@@ -133,6 +136,8 @@ public:
 			if (i == 0) {
 				cout << arr1[i] << endl;
 			}
+			else if (arr1[i] < 0)
+				cout << arr1[i] << "(x^" << i << ")";
 			else
 
 				cout << arr1[i] << "(x^" << i << ")+";
@@ -141,8 +146,7 @@ public:
 
 };
 int main() {
-
-	poly poly1(2,3,4);
+	poly poly1(2,5,2);
 	poly1.getnum();
 	poly poly2(5,1, 4);
 	poly2.getnum();
